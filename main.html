@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-commerce Page</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div class="search-container">
+      <input type="text" placeholder="Search products...">
+      <button type="submit">Search</button>
+    </div>
+  </header>
+  <div class="slideshow-container">
+    <img class="slide" src="assets/14faf108-897f-4542-80fc-9d641b5a4e0a.jpg" alt="Slide 1">
+    <img class="slide" src="assets/984b103a-3935-47d5-b5b8-9e482e7de8a4.jpg" alt="Slide 2">
+    <img class="slide" src="assets/a3ebd8b2-0d3b-427f-ab4c-c626bcd28416.jpg" alt="Slide 3">
+  </div>
+  <main>
+    <section id="products">
+      <h2>Products</h2>
+      <div class="product">
+        <img src="assets/IPhone-Earphone.jpg" alt="Product 1">
+        <h3>IPhone-Earphone</h3>
+        <p>Price: Rs.1000</p>
+        <button class="add-to-cart" data-price="20">Add to Cart</button>
+        <a href="Payement.html">
+        <button class="but-now" data-price="20">order</button>
+      </a>
+      </div>
+      <div class="product">
+        <img src="assets/mb_img_58.jpg" alt="Product 2">
+        <h3>iphone</h3>
+        <p>Price: Rs.150000</p>
+        <button class="add-to-cart" data-price="25">Add to Cart</button>
+        <a href="Payement.html">
+          <button class="but-now" data-price="20">order</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="assets/7d5c334e5f8a95304cf41d6f2f50592a.jpg" alt="Product 2">
+        <h3>vivo</h3>
+        <p>Price: Rs.50000</p>
+        <button class="add-to-cart" data-price="25">Add to Cart</button>
+        <a href="Payement.html">
+          <button class="but-now" data-price="20">order</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="assets/2abf20e4db15de777df5279ad53b997f.jpg" alt="Product 2">
+        <h3>oppo A7</h3>
+        <p>Price: Rs.50000</p>
+        <button class="add-to-cart" data-price="25">Add to Cart</button>
+        <a href="Payement.html">
+          <button class="but-now" data-price="20">order</button>
+        </a>
+      </div>
+    </section>
+    <section id="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items">
+      </ul>
+      <p id="total">Total: Rs.0</p>
+      <a href="Payement.html">
+      <button id="checkout">Checkout</button>
+    </a>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

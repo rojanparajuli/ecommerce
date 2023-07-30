@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <h1>Choose a Payment Method</h1>
+    <div class="payment-options">
+        <button class="btn" onclick="choosePayment('Cash on Delivery')">Cash on Delivery</button>
+        <button class="btn" onclick="choosePayment('Debit Card')">Debit Card</button>
+        <button class="btn" onclick="choosePayment('Credit Card')">Credit Card</button>
+        <button class="btn" onclick="choosePayment('Esewa')">Esewa</button>
+        <button class="btn" onclick="choosePayment('connect ips')">connect ips</button>
+    </div>
+    <div id="result"></div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

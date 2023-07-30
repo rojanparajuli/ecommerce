@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Swipe Animation</title>
+</head>
+
+<body>
+    <!-- Add the element with the id "animatedDiv" to animate it -->
+    <div id="animatedDiv"
+        style="background-color: #FF5733; color: ghostwhite; font-size: 25px; padding: 20px; text-align: center; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0;">
+        <strong>Praysh dai ko pasal</strong>
+    </div>
+    <script>
+        function animateSwipe() {
+            const element = document.getElementById("animatedDiv");
+            const start = performance.now();
+
+            function step(timestamp) {
+                const timeElapsed = timestamp - start;
+                const duration = 3000; // Animation duration in milliseconds (3 seconds)
+                const progress = Math.min(timeElapsed / duration, 1);
+
+                // Apply the clip-path animation
+                element.style.clipPath = `inset(0 ${100 - (progress * 100)}% 0 0)`;
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(step);
+                } else {
+                    // Redirect to "main.html" after the animation is complete
+                    window.location.href = "main.html";
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        // Call the animateSwipe function after the page has loaded
+        window.onload = animateSwipe;
+    </script>
+
+</body>
+
+</html>
