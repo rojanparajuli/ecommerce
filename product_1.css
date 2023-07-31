@@ -5,65 +5,53 @@ body {
   }
   
   header {
-    background-color: orangered;
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 1rem 0;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .search-bar {
+    margin-top: 1rem;
   }
   
   main {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    padding: 1rem;
   }
   
-  #products {
-    flex: 1;
+  h2 {
+    margin-top: 1.5rem;
   }
   
-  .product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
+  #comments {
+    margin-top: 1rem;
   }
   
-  .product img {
+  .add-comment {
+    margin-top: 1.5rem;
+  }
+  
+  .add-comment h3 {
+    margin: 0;
+  }
+  
+  .add-comment input {
     width: 100%;
-    max-width: 100px;
-    height: auto;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
   }
   
-  #cart {
-    flex: 1;
-    margin-left: 50px;
-  }
-  
-  #cart-items {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #total {
-    font-weight: bold;
-  }
-  
-  #checkout {
-    padding: 10px;
+  .add-comment button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
-  }
-  .slideshow-container {
-    max-width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .slide {
-    width: 100%;
-    height: auto;
-    display: none;
   }
   .search-container {
     display: flex;
@@ -89,4 +77,4 @@ body {
 
   .search-container button:hover {
     background-color: #45a049;
-  }
+  }  

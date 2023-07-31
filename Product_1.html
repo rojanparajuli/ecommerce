@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product_1.css">
+</head>
+
+<body>
+    <header>
+        <h1>Product Page</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </div>
+    </header>
+    <div class="product">
+        <img src="assets/mb_img_58.jpg" alt="Product 2">
+        <h3>iphone</h3>
+        <p>Price: Rs.150000</p>
+        <button class="add-to-cart" data-price="25">Add to Cart</button>
+        <a href="Payement.html">
+            <button class="but-now" data-price="20">order</button>
+        </a>
+        <main>
+            <h2>Product Description</h2>
+            <p id="productDescription">
+                i.</p>
+
+            <h2>Comments</h2>
+            <div id="comments">
+            </div>
+
+            <div class="add-comment">
+                <h3>Add your comment</h3>
+                <input type="text" id="commentInput" placeholder="Your comment...">
+                <button onclick="addComment()">Submit</button>
+            </div>
+        </main>
+
+        <script src="product_1.js"></script>
+</body>
+
+</html>
