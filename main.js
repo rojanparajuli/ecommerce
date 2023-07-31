@@ -27,13 +27,13 @@ function updateCart() {
 
   cartItems.forEach(item => {
     const listItem = document.createElement('li');
-    listItem.innerText = `${item.name} - $${item.price}`;
+    listItem.innerText = `${item.name} - Rs${item.price}`;
     cartList.appendChild(listItem);
     total += item.price;
   });
 
   const totalElement = document.getElementById('total');
-  totalElement.innerText = `Total: $${total.toFixed(2)}`;
+  totalElement.innerText = `Total: Rs.${total.toFixed(2)}`;
 }
 
 // Add event listener to the "Checkout" button
@@ -61,3 +61,48 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000); // Change slide every 3 seconds
 }
+// Sample product data for demonstration purposes
+// Sample product data for demonstration purposes
+const products = [
+  "earphone",
+  "iphone",
+  "vivo",
+  "oppo A7",
+  "laptop",
+  "mouse",
+];
+
+
+const searchInput = document.getElementById("search-input");
+const searchSuggestions = document.getElementById("search-suggestions");
+
+// Function to display search suggestions
+function showSuggestions() {
+  const inputValue = searchInput.value.toLowerCase();
+  const matchedProducts = products.filter((product) =>
+    product.toLowerCase().includes(inputValue)
+  );
+
+  // Clear previous suggestions
+  searchSuggestions.innerHTML = "";
+
+  // Display matched suggestions
+  matchedProducts.forEach((product) => {
+    const suggestionItem = document.createElement("div");
+    suggestionItem.textContent = product;
+    suggestionItem.classList.add("suggestion-item");
+    searchSuggestions.appendChild(suggestionItem);
+  });
+}
+
+// Event listener for input change in the search box
+searchInput.addEventListener("input", () => {
+  showSuggestions();
+});
+
+// Event listener to hide suggestions when clicking outside the search box
+document.addEventListener("click", (event) => {
+  if (!searchInput.contains(event.target) && !searchSuggestions.contains(event.target)) {
+    searchSuggestions.innerHTML = "";
+  }
+});
