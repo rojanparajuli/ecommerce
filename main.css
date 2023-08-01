@@ -1,73 +1,237 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f2f2f2;
+  line-height: 1.6;
 }
+
+
+
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: orangered;
+  background-color: #ff4c29;
   color: #fff;
   padding: 20px;
 }
+
+
 
 main {
   display: flex;
   justify-content: space-between;
   padding: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
+
+
 
 #products {
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+
+
+#againagainproducts {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+#againproducts {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
+#moreproducts {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+
 .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: box-shadow 0.3s;
+}
+
+
+
+.product:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.product img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.product img {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
+
+
+.product h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }
+
+
+
+.product p {
+  margin: 5px 0;
+  color: #666;
+}
+
+
+
+.add-to-cart,
+.but-now {
+  background-color: #ff4c29;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  padding: 8px 15px;
+}
+
+
+.add-to-cart:hover,
+.but-now:hover {
+  background-color: #d82b12;
+}
+
+
 
 #cart {
   flex: 1;
   margin-left: 50px;
 }
 
+
+
 #cart-items {
   list-style: none;
   padding: 0;
 }
 
-#total {
-  font-weight: bold;
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
 }
 
+
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+
+
+.cart-item-details {
+  flex: 1;
+}
+
+
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+
+
+#total {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+
 #checkout {
-  padding: 10px;
-  background-color: #333;
+  background-color: #ff4c29;
   color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
 }
+
+
+
+#checkout:hover {
+  background-color: #d82b12;
+}
+
+
 
 .slideshow-container {
   max-width: 100%;
-  position: relative;
+  height: 20%;
   overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .slide {
   width: 100%;
   height: auto;
-  display: none;
+  display: block;
+  border-radius: 5px;
 }
+
+
 
 .search-container {
   display: flex;
@@ -75,12 +239,17 @@ main {
   margin-top: 15px;
 }
 
+
+
 .search-container input[type="text"] {
   padding: 10px;
   width: 400px;
   border: 1px solid #ccc;
   border-radius: 5px 0 0 5px;
+  font-size: 16px;
 }
+
+
 
 .search-container button {
   padding: 10px 15px;
@@ -89,32 +258,42 @@ main {
   border: 1px solid #4CAF50;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  font-size: 16px;
 }
+
+
 
 .search-container button:hover {
   background-color: #45a049;
 }
+
 
 .user-dropdown {
   position: relative;
   cursor: pointer;
 }
 
+
+
 .user-icon {
   width: 30px;
   height: 30px;
 }
 
+
+
 .dropdown-content {
   display: none;
   position: absolute;
   top: 30px;
-  right: 0; 
+  right: 0;
   background-color: #f9f9f9;
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+
 
 .dropdown-content a {
   display: block;
@@ -123,13 +302,19 @@ main {
   color: #333;
 }
 
+
+
 .dropdown-content a:hover {
   background-color: #070707;
 }
 
+
+
 .user-dropdown:hover .dropdown-content {
   display: block;
 }
+
+
 
 .search-suggestions {
   position: absolute;
@@ -143,12 +328,31 @@ main {
   text-decoration-color: #070707;
 }
 
+
 .suggestion-item {
   padding: 10px;
   cursor: pointer;
   color: #070707;
 }
 
+
 .suggestion-item:hover {
   background-color: #f1f1f1;
 }
+
+
+.header_image {
+  width: 200%;
+  max-width: 500px;
+  height: auto;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+

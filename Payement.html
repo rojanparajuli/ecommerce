@@ -7,15 +7,61 @@
     <link rel="stylesheet" href="payment.css">
 </head>
 <body>
-    <h1>Choose a Payment Method</h1>
+    <header>
+        <div>
+            <h1>Choose a Payment Method</h1>
+        </div>
+    </header>
+    
+    
+    <br>
+    <br>
+    <br>
+
+
     <div class="payment-options">
-        <button class="btn" onclick="choosePayment('Cash on Delivery')">Cash on Delivery</button>
-        <button class="btn" onclick="choosePayment('Debit Card')">Debit Card</button>
-        <button class="btn" onclick="choosePayment('Credit Card')">Credit Card</button>
-        <button class="btn" onclick="choosePayment('Esewa')">Esewa</button>
-        <button class="btn" onclick="choosePayment('connect ips')">connect ips</button>
+        <button class="cashondelivery" onclick="choosePayment('Cash on Delivery')">
+            <img src="assets/4470504.png" >
+            Cash on Delivery
+        </button>
+
+
+        <button class="debit_credit" onclick="choosePayment('Debit or credit Card ')">
+            <img src="assets/4341764.png" alt="Debit or credit Card">
+            Debit or credit Card
+        </button>
+
+
+
+        <button class="esewa" onclick="choosePayment('Esewa')">
+            <img src="assets/esewa_20200118185351.jpg" alt="Esewa">
+            Esewa Payment
+        </button>
+
+
+        <button class="connectips" onclick="choosePayment('connect ips')">
+            <img src="assets/newLogo.ed7f73c8.png" alt="connect ips">
+            Connect IPS
+        </button>
     </div>
     <div id="result"></div>
+
+    <main>
+        <section id="products">
+              <div class="product">
+                <img src="assets/O1CN01NXkrAU1gJvRfPD7RU_!!6000000004122-0-tps-1920-374.jpg" alt="Product 2">
+              </div>
+
+              <br>
+              <br>
+
+              <div class="product">
+                <img src="assets/724e2b2c-6422-4757-9f93-c173343b689e.jpg_1200x1200.jpg" alt="Product 2">
+              </div>
+            </section>
+    </main>
+
+    
 
     <script src="payment.js"></script>
 </body>

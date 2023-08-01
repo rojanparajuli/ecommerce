@@ -1,25 +1,27 @@
-// Add your JavaScript code here
-// Add event listener to all "Add to Cart" buttons
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
 });
 
-// Cart items
 const cartItems = [];
 
-// Add product to cart
 function addToCart(event) {
   const button = event.target;
   const product = button.parentElement;
   const name = product.querySelector('h3').innerText;
   const price = parseFloat(button.dataset.price);
 
-  cartItems.push({ name, price });
+  // Check if the item is already in the cart
+  const existingItem = cartItems.find(item => item.name === name);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cartItems.push({ name, price, quantity: 1 });
+  }
+
   updateCart();
 }
 
-// Update cart
 function updateCart() {
   const cartList = document.getElementById('cart-items');
   cartList.innerHTML = '';
@@ -27,23 +29,31 @@ function updateCart() {
 
   cartItems.forEach(item => {
     const listItem = document.createElement('li');
-    listItem.innerText = `${item.name} - Rs${item.price}`;
+    listItem.innerText = `${item.name} x ${item.quantity} - Rs.${(item.price * item.quantity).toFixed(2)}`;
     cartList.appendChild(listItem);
-    total += item.price;
+    total += item.price * item.quantity;
   });
 
   const totalElement = document.getElementById('total');
   totalElement.innerText = `Total: Rs.${total.toFixed(2)}`;
+
+  // Update cart icon notification
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  cartIcon.dataset.count = cartItemCount;
 }
 
-// Add event listener to the "Checkout" button
 const checkoutButton = document.getElementById('checkout');
 checkoutButton.addEventListener('click', redirectToPayment);
 
-// Redirect to payment.html
 function redirectToPayment() {
-  window.location.href = 'payment.html';
+  if (cartItems.length > 0) {
+    window.location.href = 'payment.html';
+  } else {
+    alert('Please choose items before proceeding to checkout.');
+  }
 }
+
 let slideIndex = 0;
 showSlides();
 
@@ -61,8 +71,7 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000); // Change slide every 3 seconds
 }
-// Sample product data for demonstration purposes
-// Sample product data for demonstration purposes
+
 const products = [
   "earphone",
   "iphone",
@@ -72,21 +81,17 @@ const products = [
   "mouse",
 ];
 
-
 const searchInput = document.getElementById("search-input");
 const searchSuggestions = document.getElementById("search-suggestions");
 
-// Function to display search suggestions
 function showSuggestions() {
   const inputValue = searchInput.value.toLowerCase();
   const matchedProducts = products.filter((product) =>
     product.toLowerCase().includes(inputValue)
   );
 
-  // Clear previous suggestions
   searchSuggestions.innerHTML = "";
 
-  // Display matched suggestions
   matchedProducts.forEach((product) => {
     const suggestionItem = document.createElement("div");
     suggestionItem.textContent = product;
@@ -95,12 +100,12 @@ function showSuggestions() {
   });
 }
 
-// Event listener for input change in the search box
+let searchTimeout;
 searchInput.addEventListener("input", () => {
-  showSuggestions();
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(showSuggestions, 300);
 });
 
-// Event listener to hide suggestions when clicking outside the search box
 document.addEventListener("click", (event) => {
   if (!searchInput.contains(event.target) && !searchSuggestions.contains(event.target)) {
     searchSuggestions.innerHTML = "";
