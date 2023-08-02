@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center; /* Add text-align: center to center align the content */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #888;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* CSS for the image */
+        .gif {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Forgot Password?</h1>
+        <img src="pics/confused.gif" alt="GIF" class="gif" />
+
+        <form id="resetForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Reset Password" class="btn">
+            </div>
+        </form>
+        <div id="successMessage" class="success-message"></div>
+        <div id="errorMessage" class="error-message"></div>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            var emailInput = document.getElementById('email');
+            var successMessage = document.getElementById('successMessage');
+            var errorMessage = document.getElementById('errorMessage');
+
+            // Simulating form submission with a delay of 2 seconds
+            setTimeout(function() {
+                var email = emailInput.value;
+                if (email) {
+                    // Display success message
+                    successMessage.textContent = 'An email has been sent to ' + email + ' with instructions to reset your password.';
+                    errorMessage.textContent = '';
+                    emailInput.value = '';
+                } else {
+                    // Display error message if email is not entered
+                    errorMessage.textContent = 'Please enter a valid email address.';
+                    successMessage.textContent = '';
+                }
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
