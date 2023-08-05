@@ -35,7 +35,7 @@
     } else {
       alert("Registration successful!");
       document.getElementById("registrationForm").reset();
-      window.location.href = "thanks.html"; // Redirect to the thanks page
+      window.location.href = "thanks.html"; 
     }
   });
   

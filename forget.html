@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Forgot password</title>
+    <title>forgot Password?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            text-align: center; /* Add text-align: center to center align the content */
+            text-align: center; 
         }
 
         h1 {
@@ -102,16 +102,16 @@
             var successMessage = document.getElementById('successMessage');
             var errorMessage = document.getElementById('errorMessage');
 
-            // Simulating form submission with a delay of 2 seconds
+
             setTimeout(function() {
                 var email = emailInput.value;
                 if (email) {
-                    // Display success message
+
                     successMessage.textContent = 'An email has been sent to ' + email + ' with instructions to reset your password.';
                     errorMessage.textContent = '';
                     emailInput.value = '';
                 } else {
-                    // Display error message if email is not entered
+                   
                     errorMessage.textContent = 'Please enter a valid email address.';
                     successMessage.textContent = '';
                 }
