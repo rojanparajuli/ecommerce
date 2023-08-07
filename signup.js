@@ -3,7 +3,7 @@
   function setRandomBackgroundImage() {
     var randomIndex = Math.floor(Math.random() * backgroundImages.length);
     var randomImage = backgroundImages[randomIndex];
-    document.body.style.backgroundImage = "url('" + randomImage + "')";
+    document.body.style.backgroundImage = "url('" + randomImage + "')"; //apple
   }
   
   setRandomBackgroundImage();
